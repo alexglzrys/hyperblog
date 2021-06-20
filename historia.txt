@@ -1,3 +1,13 @@
 Este es el contenido inicial de este archivo
 
 Primera linea de contenido
+
+1. Agregar un archivo al staging área (seguimiento/modificado)
+git add nombreArchivo
+
+2. Sacar un archivo de staging area (sin seguimiento)
+git rm --cached nombreArchivo
+
+3. Enviar un archivo al repositorio (Historial de cambios)
+git commit -m "mensaje del commit"
+
