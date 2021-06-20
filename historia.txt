@@ -2,12 +2,22 @@ Este es el contenido inicial de este archivo
 
 Primera linea de contenido
 
+0. Inicializar un repositorio de git
+git init
+
 1. Agregar un archivo al staging área (seguimiento/modificado)
 git add nombreArchivo
+git add .  (todos los archivos con cambios/sin seguimiento)
 
 2. Sacar un archivo de staging area (sin seguimiento)
 git rm --cached nombreArchivo
 
 3. Enviar un archivo al repositorio (Historial de cambios)
 git commit -m "mensaje del commit"
+
+4. Mostrar todo el log de commits de nuestro proyecto
+git log
+
+5. Analizar los cambios en los archivos del proyecto
+git show
 
