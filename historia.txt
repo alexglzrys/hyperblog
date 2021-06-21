@@ -27,3 +27,10 @@ git diff commitHistoria commitBase (base por lo general es el HEAD)
 7. Analizar los cambios que hay en el directorio de trabajo VS staging
 git diff        (Tenemos agregado un archivo en el staging, pero este se le han añadido nuevos cambios, es decir, se agregó, luego se modifico)
                 Esto obliga a que los cambios más recientes se tienen que enviar al staging
+
+8. Volver en el tiempo
+git checkout hashCommit nombreArchivo   (volver a un estado anterior este archivo)
+git checkout master nombreArchivo       (volver a la version mas reciente este archivo)
+NOTA:
+Si se desea conservar los cambios anteriores de un archivo, se realiza un commit.
+Cuando un archivo se vuelve en el tiempo, realmente se esta modificando.
