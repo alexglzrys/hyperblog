@@ -34,3 +34,10 @@ git checkout master nombreArchivo       (volver a la version mas reciente este a
 NOTA:
 Si se desea conservar los cambios anteriores de un archivo, se realiza un commit.
 Cuando un archivo se vuelve en el tiempo, realmente se esta modificando.
+
+9. Deshacer commits (solo en repositorio local, se infiere que jamás se ha hecho un pull de estos en remoto)
+git reset --hard hashCommit     (elimina los commits mas recientes del historial con todo y su contenido, es decir, elimina los cambios de nuestro directorio de trabajo --- es el mas destructivo)
+git reset --soft hashCommit     (elimina los commits mas recientes del historial conservando sus cambios en el stagging -- sirve para hacer un commit mas general de esos cambios)
+git reset hashCommit            (elimina el historial de commits del historial, conserva los cambios en el directorio -- sirve para añadir mas cosas y hacer un commit mas general de esos cambios)
+git commit --amend -m "nuevo mensaje"       (modifica el mensaje del último commit)
+git commit --amend --no-edit                (permite corregir el commit mas reciente con nuevos cambios cambios preparados en el staging - se nos olvido agregar cosas, o se nos fue un dato o archivo que forma parte del commit mas reciente)
