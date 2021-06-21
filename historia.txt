@@ -22,4 +22,8 @@ git log
 git show
 
 6. Analizar los cambios entre dos commits
-git diff commitHistoria commitBase (base por lo general es el HEAD) 
+git diff commitHistoria commitBase (base por lo general es el HEAD)
+
+7. Analizar los cambios que hay en el directorio de trabajo VS staging
+git diff        (Tenemos agregado un archivo en el staging, pero este se le han añadido nuevos cambios, es decir, se agregó, luego se modifico)
+                Esto obliga a que los cambios más recientes se tienen que enviar al staging
