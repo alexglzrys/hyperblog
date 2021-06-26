@@ -2,6 +2,11 @@ Este es el contenido inicial de este archivo
 
 Primera linea de contenido
 
+00. Configurar nuestra cuenta de git (repositorio local)
+git config -l       (ver la configuración actual)
+git config --global user.name "Nombre del usuario"
+git config --global user.email "email"
+
 0. Inicializar un repositorio de git
 git init
 
@@ -58,11 +63,43 @@ git merge nombreRamaAFisionar
 12. Comunicar con Github
 * Crear repositorio en Github
 * Copiar el link https
-git remote add origin url_https_link_repositorio    (añadir un origen remoto)
-git push origin master      (empujar la rama master hacia el origen - repositorio remoto)
+git remote add origin url_https_link_repositorio    (añadir un repositorio remoto - llamado origin)
+git push origin master      (empujar la rama master hacia el repositorio remoto - llamado origin)
 git pull origen master      (traer el origen (repositorio remoto) hacia mi rama master (local))
 git remote -v               (Listar los repositorios remotos conectados con mi repositorio local)
 
 * Cuando el repositorio remoto ya tiene cambios (README, LICENCE) y queremos traer esa info por primera vez
 git pull origen master --allow-unrelated-histories
 
+Podemos tener registrados multiples repositorios remotos en un repositiorio local. Y el nombre es indiferente, pero generalmente se le denomina origin 
+
+
+13. Generar claves SSH      (Una llave privada/publica - por cada computadora)
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"     (Generar claves SSH - Publica y Privada)
+        Asignar un nombre al archivo cuando lo solicite, no es necesario añadir una contraseña o frase)
+eval "$(ssh-agent -s)"        (Iniciar el agente para gestionar las claves en la computadora)
+
+AGREGAR LA LLAVE PRIVADA AL SSH-AGENT DEL SISTEMA OPERATIVO
+
+WINDOWS / LINUX
+ssh-add ~/.ssh/nombreArchivoClavePrivada        (Por defecto, es id_rsa si no se asigno un nombre)
+
+MAC OS
+open ~/.ssh/config          (Abrir el archivo de configuración o crearlo si no existe - touch ~/.ssh/config)
+Añadir lo siguiente al mismo
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/nombreArchivoClavePrivada     (id_rsa)
+
+ssh-add -K ~/.ssh/nombreArchivoClavePrivada
+
+14. Vincular Llave pública con Github
+* Ir a settings / SSH and GPG KEY
+* Añadir la nueva llave pública asociada con uno de nuestos PC      (abrir el id_rsa.pub con VSCode y copiar y gegar su contenido en el formulario de github)
+
+
+14. Cambiar URL del repositorio remoto registrado
+git remote set-url origin git@github.com:alexglzrys/hyperblog.git       (origin es el nombre que le dimos a nuestro repositorio remoto)
+
+** SI TENEMOS VINCULADAS LAS CREDENCIALES SSH PUBLICAS CON GITHUB, LA PRIMERA VEZ NOS CUESTIONA SI ESTAMOS DE ACUERDO, EL RESTO, JAMÁS NOS PIDE EL PASSWORD"
