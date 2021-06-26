@@ -59,6 +59,12 @@ git branch                      (listar todas las ramas registradas en el reposi
     Una fusión en si es un nuevo commit en la historia del proyecto, por eso si existen conflictos al fusionar (Que dos progrmaadores hayan modificado las mismas lineas de código), es importante atenderlos y hacer el commit de forma tradicional.
     
 git merge nombreRamaAFisionar
+git show-branch --all       (Obtener mas información sobre los ultimos cambios en las ramas del proyecto)
+git push origin otraRama    (Empujar al repositorio remoto una rama especifica de mi proyecto)
+                            Esto significa que podemos tener ramas locales que no tienen por que ser publicas en remoto.
+                            
+
+
 
 12. Comunicar con Github
 * Crear repositorio en Github
