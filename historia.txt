@@ -46,3 +46,10 @@ git commit --amend --no-edit                (permite corregir el commit mas reci
 git branch nombreRama           (crear una rama, "se genera una copia exacta del commit más reciente para esa rama")
 git checkout nombreRama         (moverse a una determinada rama "linea de tiempo")
 git branch                      (listar todas las ramas registradas en el repositorio)
+
+
+11. Fusionar ramas
+    NOTA:   SE DEBE POSICIONAR EN LA RAMA DONDE SE DESEA DEJAR CAER LOS CAMBIOS (Por lo generar es en master, main, developer)
+            Al fusionar la rama, la rama anterior no se borra, sigue exisitendo. Pero el HEAD puede seguir avanzando en la historia, a tal grado que esa rama se quede solitaria, sin las nuevas actualizaciones. EN ESTE SENTIDO, SI DESEAMOS SEGUIR TRABAJANDO EN ESA RAMA, ES IMPORTANTE HACER UN MERGE, PARA TRAERNOS NUEVAMENTE TODOS LOS CAMBIOS MÁS RECIENTES A DICHA RAMA.
+    Una fusión en si es un nuevo commit en la historia del proyecto, por eso si existen conflictos al fusionar (Que dos progrmaadores hayan modificado las mismas lineas de código), es importante atenderlos y hacer el commit de forma tradicional.
+git merge nombreRamaAFisionar
