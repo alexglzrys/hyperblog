@@ -54,3 +54,15 @@ git branch                      (listar todas las ramas registradas en el reposi
     Una fusión en si es un nuevo commit en la historia del proyecto, por eso si existen conflictos al fusionar (Que dos progrmaadores hayan modificado las mismas lineas de código), es importante atenderlos y hacer el commit de forma tradicional.
     
 git merge nombreRamaAFisionar
+
+12. Comunicar con Github
+* Crear repositorio en Github
+* Copiar el link https
+git remote add origin url_https_link_repositorio    (añadir un origen remoto)
+git push origin master      (empujar la rama master hacia el origen - repositorio remoto)
+git pull origen master      (traer el origen (repositorio remoto) hacia mi rama master (local))
+git remote -v               (Listar los repositorios remotos conectados con mi repositorio local)
+
+* Cuando el repositorio remoto ya tiene cambios (README, LICENCE) y queremos traer esa info por primera vez
+git pull origen master --allow-unrelated-histories
+
