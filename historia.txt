@@ -43,6 +43,8 @@ git commit --amend -m "nuevo mensaje"       (modifica el mensaje del último com
 git commit --amend --no-edit                (permite corregir el commit mas reciente con nuevos cambios cambios preparados en el staging - se nos olvido agregar cosas, o se nos fue un dato o archivo que forma parte del commit mas reciente)
 git add -am "mensaje del commit"    Solo funciona con archivos existentes (para agregar nuevos el procedimiento es el tradicional)
 
-10. Ramas
-git branch nombreRama        (Crear rama a partir dónde se encuentre el HEAD)
+10. Ramas (lineas de tiempo alternativas al proyecto)
+git branch nombreRama        (Crear rama "se genera una copia exacta del commit más reciente para esa rama")
 git checkout nombreRama      (Moverme hacia otra rama)
+git branch                      (listar todas las ramas registradas en el repositorio)
+
