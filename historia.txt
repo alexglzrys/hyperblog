@@ -122,4 +122,10 @@ git tag -a v0.1 -m "Primera versión del proyecto del curso de Git" aaf7452
 git show nombreTag      (Ver información completa de ese tag)
 git show-ref --tags     (Ver un listado completo de todos los tags y su relación con los commits del proeycto)
 git push origin --tags  (Empujar los tags hacia el repositorio remoto)
-git tag -d nombreTag    (Eliminar un tag del repositorio - "Recordemos que tambien nos sirven como referencias - quizá lo creamos para indicar que teníamos que hacer algo en ese punto del proyecto")
+
+(Eliminar un tag del repositorio - "Recordemos que tambien nos sirven como referencias - quizá lo creamos para indicar que teníamos que hacer algo en ese punto del proyecto")
+git tag -d nombreTag
+
+NOTA: SI ENVIAMOS LOS CAMBIOS A GITHUB EL TAG ELIMINADO EN NUESTRO REPOSITORIO LOCAL SEGUIRA ESTANDO PRESENTE EN GITHUB. ESTO SE DEBE A QUE GITHUB CONSIDERA LOS TAGS COMO RELEASES DEL PROYECTO, POR TANTO TENEMOS QUE FORZAR A SU ELIMINACION EN remoto
+
+git push origin --delete nombreTagAEliminarEnRemoto
