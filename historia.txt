@@ -122,6 +122,7 @@ git tag -a v0.1 -m "Primera versión del proyecto del curso de Git" aaf7452
 git show nombreTag      (Ver información completa de ese tag)
 git show-ref --tags     (Ver un listado completo de todos los tags y su relación con los commits del proeycto)
 git push origin --tags  (Empujar los tags hacia el repositorio remoto)
+git pull origin --tags  (Traerme todos los tags definidos en el repositorio remoto)
 
 (Eliminar un tag del repositorio - "Recordemos que tambien nos sirven como referencias - quizá lo creamos para indicar que teníamos que hacer algo en ese punto del proyecto")
 git tag -d nombreTag
