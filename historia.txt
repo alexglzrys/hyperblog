@@ -103,3 +103,23 @@ ssh-add -K ~/.ssh/nombreArchivoClavePrivada
 git remote set-url origin git@github.com:alexglzrys/hyperblog.git       (origin es el nombre que le dimos a nuestro repositorio remoto)
 
 ** SI TENEMOS VINCULADAS LAS CREDENCIALES SSH PUBLICAS CON GITHUB, LA PRIMERA VEZ NOS CUESTIONA SI ESTAMOS DE ACUERDO, EL RESTO, JAMÁS NOS PIDE EL PASSWORD"
+
+15. Ver la historia completa de nuestro proyecto
+git log --all --oneline --decorate --graph
+
+* Podemos crear una alias de todos esos comandos largos
+alias nombreComando="todo-el-comando-largo-y-feo"
+
+nombreComando       (Invoca el comando asociado con este alias)
+
+
+16. Tags        (Versiones de nuestro código)
+(Crear un tag llamado v0.1 referenciado al commit más actual - Los tags tambien llevan un mensaje, pero no contenido modificado, es por ello que cuando hacemos status, no aparece nada. Son solo referencias hacia un commit en especifico. Por tanto, los tags son utiles en Github, por que hacen referencia a un punto especifico del proyecto. "version")
+git tag -a v1.4 -m "my version 1.4"         
+git tag         (Listar todos los tags en mi proyecto)
+(Crear un tag asociado a un commit anterior en mi proyecto - se añade el hash al final del mismo)
+git tag -a v0.1 -m "Primera versión del proyecto del curso de Git" aaf7452      
+git show nombreTag      (Ver información completa de ese tag)
+git show-ref --tags     (Ver un listado completo de todos los tags y su relación con los commits del proeycto)
+git push origin --tags  (Empujar los tags hacia el repositorio remoto)
+git tag -d nombreTag    (Eliminar un tag del repositorio - "Recordemos que tambien nos sirven como referencias - quizá lo creamos para indicar que teníamos que hacer algo en ese punto del proyecto")
