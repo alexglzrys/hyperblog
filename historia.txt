@@ -41,3 +41,8 @@ git reset --soft hashCommit     (elimina los commits mas recientes del historial
 git reset hashCommit            (elimina el historial de commits del historial, conserva los cambios en el directorio -- sirve para añadir mas cosas y hacer un commit mas general de esos cambios)
 git commit --amend -m "nuevo mensaje"       (modifica el mensaje del último commit)
 git commit --amend --no-edit                (permite corregir el commit mas reciente con nuevos cambios cambios preparados en el staging - se nos olvido agregar cosas, o se nos fue un dato o archivo que forma parte del commit mas reciente)
+git add -am "mensaje del commit"    Solo funciona con archivos existentes (para agregar nuevos el procedimiento es el tradicional)
+
+10. Ramas
+git branch nombreRama        (Crear rama a partir dónde se encuentre el HEAD)
+git checkout nombreRama      (Moverme hacia otra rama)
