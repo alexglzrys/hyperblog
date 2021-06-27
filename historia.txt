@@ -177,4 +177,14 @@ Agregar un nuevo invitado (Puede ser por email / username)
 Ahora ya puede hacer push (pero primero tiene que clonar el proyecto)
 ** DE NO HACER ESTO, AL HACER PUSH GITHUB ENVIARÁ UN ERROR 403
 
-18. 
+
+
+18. Pull Request.
+
+Solo se encuentran disponibles en Github, Gitlab o Bitnucket. No son propios de GIT, y son como procesos intermedios que permiten a los integrantes de un equipo de desarrollo tomar decisiones sobre ciertos cambios en el proyecto, antes de fusionarlos con la rama maestra.
+Es un similar a procesos de revisión: Es decir, yo internamente veo que existen errores sobre mi rama de trabajo, creo otra rama alternativa para corregir esos bugs, pero antes de fusionarla con mi rama (desarrollo frontend) y subirla al repositorio remoto, SOLO HAGO PUSH de la rama FIX, en GITHUB pido un PULL-REQUEST (opinion o revisión de esa rama) a algun colaborador del proyecto, el me da sus opiones (si existen erroes aun - No lo aprueba), o acepta la fusión (merge).
+Estos avisos o mensajes son a través de la plataforma de GITHUB y CORREO ELECTRÓNICO.
+
+** En la vida diaria, se hace de esa forma. Hay alguien que se le pide revisar esos cambios (MEDIANTE UN PULL REQUEST), de ser correcto, acepta y por consiguiente se hace el MERGE. con la rama objetivo. (Un nuevo commit en la historia del proyecto.) Git ofrece la posibilidad de borrar esa rama de FIX (para no llenarnos de muchas ramas de corrección), pero eso no significa que en local perdamos esa rama, nosotros decidimos si la conservamos o tambíen la eliminamos.
+
+IMPORTANTE: Hacer un PULL de la rama objetivo, ya que de ser aprobado el cambio, esta ya tiene los nuevos camboios fusionados.
