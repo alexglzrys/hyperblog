@@ -200,3 +200,21 @@ En este punto, no somos colaboradores, pero nos gustaría contribuir con algunas
 - Hacer un FORK (Una copia exacta de todo el proyecto vinculada a mi cuenta de GITHUB)
                 Ojo esta puede rápidamente estar unos cuantos commits atras (desactualizada) si el dueño del proyecto es muy activo y sube mejoras.
 
+- Se recomienda añadir un repositorio remoto identificado como upstream (fuente de origen) en el repositorio local, mismo que apunte a la URL/ssh del proyecto original. Ya que el origin corresponde al FORK de este mismo proyecto.
+
+git remote add upstream git@github.com:alexglzrys/hyperblog.git
+git remote -v
+
+- Hacer un PULL hacia master dede el repositorio remoto UPSTREAM. (De esta forma nos aseguramos que ambos repositorios "local/fork/original" esten debidamente emparejados.)
+
+git pull upstream master
+
+- Ahora para hacer las contribuciones, trabajar en local, hacer los commits, enviar esos cambios al FORk, y desde el FORK Solictar un PULL REQUEST (github es inteligente y sabe a quien solicitarlo, al dueño original del proyecto).
+
+git push origin master
+git add
+git commit
+git push origin master
+
+- Si todo es correcto, el dueño lo aprueba, lo fusiona y entonces sigue la historia normal de ese proyecto, NOSOTROS DEBEMOS HACER PULL A DIARIO desde el UPSTREAM para que nuestro repositorio local este al día, y HACER UN PULL AL FORK (copia en github) para que tanto el local como el fork estem emparejados con el repo original.
+
