@@ -139,6 +139,9 @@ ssh-add -K ~/.ssh/nombreArchivoClavePrivada
 14. Cambiar URL del repositorio remoto registrado
 git remote set-url origin git@github.com:alexglzrys/hyperblog.git       (origin es el nombre que le dimos a nuestro repositorio remoto)
 
+14.5 Eliminar un reposotorio remoto añadido.
+git remote remove nombreRepoRemoto
+
 ** SI TENEMOS VINCULADAS LAS CREDENCIALES SSH PUBLICAS CON GITHUB, LA PRIMERA VEZ NOS CUESTIONA SI ESTAMOS DE ACUERDO, EL RESTO, JAMÁS NOS PIDE EL PASSWORD"
 
 15. Ver la historia completa de nuestro proyecto
@@ -200,9 +203,11 @@ En este punto, no somos colaboradores, pero nos gustaría contribuir con algunas
 - Hacer un FORK (Una copia exacta de todo el proyecto vinculada a mi cuenta de GITHUB)
                 Ojo esta puede rápidamente estar unos cuantos commits atras (desactualizada) si el dueño del proyecto es muy activo y sube mejoras.
 
+                O puede tener unos commits más adelante, porque hemos contribuido demasiado que el original ya se quedo obsoleto.
+
 - Se recomienda añadir un repositorio remoto identificado como upstream (fuente de origen) en el repositorio local, mismo que apunte a la URL/ssh del proyecto original. Ya que el origin corresponde al FORK de este mismo proyecto.
 
-git remote add upstream git@github.com:alexglzrys/hyperblog.git
+git remote add upstream https://github.com/alexglzrys/hyperblog.git     (siempre colocar el http)
 git remote -v
 
 - Hacer un PULL hacia master dede el repositorio remoto UPSTREAM. (De esta forma nos aseguramos que ambos repositorios "local/fork/original" esten debidamente emparejados.)
@@ -218,3 +223,6 @@ git push origin master
 
 - Si todo es correcto, el dueño lo aprueba, lo fusiona y entonces sigue la historia normal de ese proyecto, NOSOTROS DEBEMOS HACER PULL A DIARIO desde el UPSTREAM para que nuestro repositorio local este al día, y HACER UN PULL AL FORK (copia en github) para que tanto el local como el fork estem emparejados con el repo original.
 
+- El dueño debería hacer pull de los nuevos cambios en el repositorio remoto.
+
+Es importante mencionar que los PULL REQUEST son una caracteristica de GITHUB
