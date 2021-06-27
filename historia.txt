@@ -2,10 +2,17 @@ Este es el contenido inicial de este archivo
 
 Primera linea de contenido
 
-00. Configurar nuestra cuenta de git (repositorio local)
+00. Configurar nuestra cuenta de git (de forma global en el sistema)
 git config -l       (ver la configuración actual)
 git config --global user.name "Nombre del usuario"
 git config --global user.email "email"
+
+*** Otra alternativa es usar credenciales distintas para cada repositorio
+
+git config user.name "Nombre del usuario para este repositorio"
+git config user.email "email para este repositorio"
+
+
 
 0. Inicializar un repositorio de git
 git init
