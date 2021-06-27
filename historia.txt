@@ -2,12 +2,12 @@ Este es el contenido inicial de este archivo
 
 Primera linea de contenido
 
-00. Configurar nuestra cuenta de git (de forma global en el sistema)
+00. Configurar nuestra cuenta de git (de forma global para el usuario)
 git config -l       (ver la configuración actual)
 git config --global user.name "Nombre del usuario"
 git config --global user.email "email"
 
-*** Otra alternativa es usar credenciales distintas para cada repositorio
+*** Otra alternativa es usar credenciales distintas para cada repositorio de GIT
 
 git config user.name "Nombre del usuario para este repositorio"
 git config user.email "email para este repositorio"
@@ -52,18 +52,29 @@ git reset --hard hashCommit     (elimina los commits mas recientes del historial
 git reset --soft hashCommit     (elimina los commits mas recientes del historial conservando sus cambios en el stagging -- sirve para hacer un commit mas general de esos cambios)
 git reset hashCommit            (elimina el historial de commits del historial, conserva los cambios en el directorio -- sirve para añadir mas cosas y hacer un commit mas general de esos cambios)
 git commit --amend -m "nuevo mensaje"       (modifica el mensaje del último commit)
-git commit --amend --no-edit                (permite corregir el commit mas reciente con nuevos cambios cambios preparados en el staging - se nos olvido agregar cosas, o se nos fue un dato o archivo que forma parte del commit mas reciente)
-git add -am "mensaje del commit"    Solo funciona con archivos existentes (para agregar nuevos el procedimiento es el tradicional)
+git commit --amend --no-edit                (permite corregir el commit mas reciente con nuevos cambios preparados en el staging - se nos olvido agregar cosas, o se nos fue un dato o archivo que forma parte del commit mas reciente)
+git commit -am "mensaje del commit"    Solo funciona con archivos existentes (para agregar nuevos el procedimiento es el tradicional)
+
 
 10. Ramas (lineas de tiempo alternativas al proyecto)
-git branch nombreRama        (Crear rama "se genera una copia exacta del commit más reciente para esa rama")
-git checkout nombreRama      (Moverme hacia otra rama)
+git branch nombreRama           (Crear rama "se genera una copia exacta del commit más reciente para esa rama")
+git checkout nombreRama         (Moverme hacia otra rama)
 git branch                      (listar todas las ramas registradas en el repositorio)
+git branch -d nombnreRama       (Eliminar una rama del repositorio local - No afecta al remoto)
+git push origin nombreRama      (Enviar una rama al repositorio remoto)
+git pull origin nombreRama      (Traerme una rama del repositorio remoto)      
 
-11. Fusionar ramas
+(Eliminar rama del repositorio remoto)
+git push origin :nombreRama     
+git push origin --delete nombreRama
+
+
+
+
+11. Fusionar ramas "MERGE"
     NOTA:   SE DEBE POSICIONAR EN LA RAMA DONDE SE DESEA DEJAR CAER LOS CAMBIOS (Por lo generar es en master, main, developer)
-            Al fusionar la rama, la rama anterior no se borra, sigue exisitendo. Pero el HEAD puede seguir avanzando en la historia, a tal grado que esa rama se quede solitaria, sin las nuevas actualizaciones. EN ESTE SENTIDO, SI DESEAMOS SEGUIR TRABAJANDO EN ESA RAMA, ES IMPORTANTE HACER UN MERGE, PARA TRAERNOS NUEVAMENTE TODOS LOS CAMBIOS MÁS RECIENTES A DICHA RAMA.
-    Una fusión en si es un nuevo commit en la historia del proyecto, por eso si existen conflictos al fusionar (Que dos progrmaadores hayan modificado las mismas lineas de código), es importante atenderlos y hacer el commit de forma tradicional.
+            Al fusionar la rama, la rama anterior no se borra, sigue exisitendo. Pero el HEAD puede seguir avanzando en la historia del proyecto, a tal grado que esa rama se quede solitaria sin las nuevas actualizaciones de la rama master. EN ESTE SENTIDO, SI DESEAMOS SEGUIR TRABAJANDO EN ESA RAMA, ES IMPORTANTE VALORAR EL IMPACTO DE LOS NUEVOS CAMBIOS EN LA RAMA MAESTRA (NO SE RECOMIENDA HACER MERGE DE LA RAMA MAESTRA EN ESTA RAMA), EN CASO CONTRARIO, MEJOR CREAR UNA NUEVA RAMA CON LA ULTIMA VERSION DE LA RAMA MAESTRA Y TRABAJAR SOBRE ELLA.
+    Una fusión en si es un nuevo commit en la historia del proyecto, por eso si existen conflictos al fusionar (Que dos progrmaadores hayan modificado las mismas lineas de código), es importante atenderlos y hacer el commit de forma tradicional (aceptando los cambios existentes / aceptando los cambios entrantes).
     
 git merge nombreRamaAFisionar
 git show-branch --all       (Obtener mas información sobre los ultimos cambios en las ramas del proyecto)
@@ -84,7 +95,20 @@ git remote -v               (Listar los repositorios remotos conectados con mi r
 * Cuando el repositorio remoto ya tiene cambios (README, LICENCE) y queremos traer esa info por primera vez
 git pull origen master --allow-unrelated-histories
 
-Podemos tener registrados multiples repositorios remotos en un repositiorio local. Y el nombre es indiferente, pero generalmente se le denomina origin 
+Podemos tener registrados multiples repositorios remotos en un repositiorio local. Y el nombre es indiferente, pero generalmente se le denomina origin
+
+
+12.5 ABC del Pull y Push
+
+IMPORTANTE: Se recomienda que antes de hacer un PULL (traernos los nuevos cambios publicados en el repositorio remoto), nos posicionemos en la rama correcta dentro de nuestro repositiorio local, ya que un PULL EN SI ES UN MERGE. Por tanto, si deseamos hacer pull de master, debemos posicionarnos en master. Si deseamos hacer pull de la rama de desarrollo, nos posicionamos sobre la rama de desarrollo dentro del repositorio local.
+Finalmente, si deseamos dejar caer los cambios de la rama desarrollo sobre la rama master, nos posicionamos en master, hacemos merge de desarrollo, Y FINALMENTE HACEMOS PUSH DE MASTER HACIA EL REPOSITORIO REMOTO (origion)
+
+No debemos de hacer PUSH de una rama que no nos corresponde, solo se debe hacer PULL para traernos esos cambios de la otra persona que esta trabajando sobre la misma.
+
+Antes de hacer un PUSH o un nuevo COMMIT en el repositioro local. Es importante hacer un PULL.
+Es decir, primero nos traemos los nuevos cambios publicados en el repositorio remoto, y luego hacemos los commits correspondientes con nuestro trabajo, y antes de publicar, nuevamente hacemos un PULL y finalmente el PUSH.
+
+
 
 
 13. Generar claves SSH      (Una llave privada/publica - por cada computadora)
@@ -152,3 +176,5 @@ Agregar un nuevo invitado (Puede ser por email / username)
 ** El invitado tiene que aceptar la invitación enviada por correo electrónico
 Ahora ya puede hacer push (pero primero tiene que clonar el proyecto)
 ** DE NO HACER ESTO, AL HACER PUSH GITHUB ENVIARÁ UN ERROR 403
+
+18. 
