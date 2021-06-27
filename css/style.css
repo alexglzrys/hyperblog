@@ -59,3 +59,10 @@ body {
 .posts {
     width: 28%;
 }
+
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
