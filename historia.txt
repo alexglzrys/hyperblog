@@ -190,3 +190,13 @@ Un PUll Request, puede estar formado de muchos commits y muchos archivos cambiad
 ** En la vida diaria, se hace de esa forma. Hay alguien que se le pide revisar esos cambios (MEDIANTE UN PULL REQUEST), de ser correcto, acepta y por consiguiente se hace el MERGE. con la rama objetivo. (Un nuevo commit en la historia del proyecto.) Git ofrece la posibilidad de borrar esa rama de FIX (para no llenarnos de muchas ramas de corrección), pero eso no significa que en local perdamos esa rama, nosotros decidimos si la conservamos o tambíen la eliminamos.
 
 IMPORTANTE: Hacer un PULL de la rama objetivo, ya que de ser aprobado el cambio, esta ya tiene los nuevos camboios fusionados.
+
+
+--- PULL REQUEST EN PROYECTOS OPEN SOURCE ( Solicitar que mis cambios sean considerados en el proyecto )
+
+En este punto, no somos colaboradores, pero nos gustaría contribuir con algunas mejoras en el proyecto.
+- Hacer un watch (seguir el proyecto)
+- Dar una estrellita (un me gusta al proyecto)
+- Hacer un FORK (Una copia exacta de todo el proyecto vinculada a mi cuenta de GITHUB)
+                Ojo esta puede rápidamente estar unos cuantos commits atras (desactualizada) si el dueño del proyecto es muy activo y sube mejoras.
+
