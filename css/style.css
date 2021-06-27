@@ -44,4 +44,6 @@ body {
     color: white;
     text-align: center;
     padding: 2rem 0;
+    font-size: .9rem;
+    text-shadow: 0 0 1px yellow;
 }
