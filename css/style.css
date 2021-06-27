@@ -67,4 +67,5 @@ body {
     padding: 2rem 0;
     font-size: .9rem;
     text-shadow: 0 0 1px yellow;
+    font-weight: lighter;
 }
