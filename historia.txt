@@ -254,3 +254,14 @@ Es un archivo para la descripción detallada del proyecto y sus formas de instal
 Es común en el transcurso del proyecto, decidor renombrar el nombre de algunos archivos. Esto se hace a través del la linea de comandos de GIT cuando el archivo ya se encuentra agregado al repositorio
 
 git mv old_filename new_filename
+
+
+
+22. Generar la página web de nuestro proyecto (GITHUB PAGES)
+
+Ir a la configuración del proyecto en Github
+Ir a Pages
+Seleccionar la fuente (rama) desde se alimentará el sitio web
+Seleccionar /docs
+Save
+
