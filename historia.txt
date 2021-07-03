@@ -279,5 +279,6 @@ Mi recomendación es no usarlo, siempre es bueno saber de donde sugen los commit
 Ejecutar estos dos comandos en este orden
 git rebase ramaBase              (desde la rama alternativa primero)
 git rebase ramaAlternativa       (desde la rama base)
-
+git branch -D ramaAlternativa    (con confianza podemos eliminar la rama experimental, 
+                                  pues ya tenemos todos sus commits en la ramaBase)
 
