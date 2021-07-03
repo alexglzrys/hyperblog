@@ -276,7 +276,8 @@ Esto solo es local.
 El ejemplo es trabajar en development y surgen nuevas caracteristicas (otra rama), se trabajan en esas caracteristicas, pero surgen solicitudes en la rama development, al final nos gustaria que la historia de la rama development tenga todos los commits de las demas ramas. (SOLO POR ESTETICA)
 Mi recomendación es no usarlo, siempre es bueno saber de donde sugen los commits, en que momento, y desde que rama, cuando se fusionaron, etc.
 
-git rebase              (desde la rama alternativa primero)
-git rebase              (desde la rama base)
+Ejecutar estos dos comandos en este orden
+git rebase ramaBase              (desde la rama alternativa primero)
+git rebase ramaAlternativa       (desde la rama base)
 
 
