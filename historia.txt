@@ -303,3 +303,19 @@ ES IMPORTANTE MENCIONAR QUE PODEMOS RECUPERAR, ELIMINAR O SACAR A UNA NUEVA RAMA
 
 GENERALMENTE SE LES USA FRECUENTEMENTE EN EQUIPOS CUYAS PETICIONES SON LATENTES, AVANZAS EN ALGO EXPERIMENTAL QUE NO TE GUSTARIA DEJAR CAER EN UNA RAMA, SON PRUEBAS QUE SI FUNCIONAN LAS DEJAS CAER SOBRE UNA RAMA Y FUSIONES CON TU RAMA PRINCIPAL, Y LUEGO AL MASTER.
 pero al ser moficaciones, es probable que se tope uno con problemas al atender aspectos en otras ramas, y es imposible moverse si esas modificaciones no son confirmadas, para eso esta el stash.
+
+
+
+25. CLEAN
+
+Muchas veces tenemos archivos regados en nuestro directorio de trabajo que aun no han sido trackeados, es decir, no les hemos dado seguimiento con GIT.
+Llega el momento de querer hacer limpieza y desasernos de todos esos archivos basura.
+
+git clean -n (-ndX)           (Lista todos los archivos que no han sido trackeados por GIT)
+git clean -f            (elimina solo los archivos que no han sido trackeados)
+git clean -fd           (Elimina archivos y directorios que no han sido trackeados)
+                        Buenisimo para librerías que siempre no serán parte del proyecto
+
+git clean -fdX          Buenismo para eliminar archivos ignorados (node_modules, .mp3, etc)
+                        HAY QUE TENER CUIDADO CON LOS ARCHIVOS BINARIOS, YA QUE LAS IMAGENES O VIDEOS
+                        QUE IGNOREMOS SE ELIMINARÁN, DEBEMOS TENER UN RESPALDO DE LOS MISMOS EN UN CDN ya que este comando es como un Build para dejar la versión definitiva de nuestro repositiorio 
