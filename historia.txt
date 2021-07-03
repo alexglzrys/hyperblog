@@ -226,3 +226,19 @@ git push origin master
 - El dueño debería hacer pull de los nuevos cambios en el repositorio remoto.
 
 Es importante mencionar que los PULL REQUEST son una caracteristica de GITHUB
+
+
+19. .gitignore
+
+Es un archivo que se coloca a nivel de raíz del proyecto, dónde se especifica que directorios o archivos del proyecto deben ser ignorados por GIT.
+*.jpg
+*.png
+node_modules/
+images/
+documentos/
+!documentos/publicos
+El ! indica una excepción (se ignora todo el directorio documentos, pero se permite la subcarpeta publicos)
+
+NOTA: EN GIT NO SE RECOMIENDA AGREGAR ARCHIVOS BINARIOS (IMAGENES), SOLO ARCHIVOS DE TEXTO.
+Para el tema de imagenes podemos publicarlas directamente sobre un FTP, CDN, o servicios como imgurl.com, donde se publican imagenes y solo se hace referencia a ellas por su URL.
+

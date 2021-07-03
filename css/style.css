@@ -59,6 +59,11 @@ body {
 .posts {
     width: 28%;
 }
+.image {
+    max-width: 80%;
+    display: block;
+    margin: 2rem auto;
+}
 
 .footer {
     background-color: rgb(3, 27, 58);
