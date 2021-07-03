@@ -282,3 +282,24 @@ git rebase ramaAlternativa       (desde la rama base)
 git branch -D ramaAlternativa    (con confianza podemos eliminar la rama experimental, 
                                   pues ya tenemos todos sus commits en la ramaBase)
 
+
+
+24. Stash
+
+En muchas ocasiones vamos a tener modificaciones que no han sido comiteadas. Pero necesitamos cambiar de rama. Por defecto no se puede, necesitamos hacer un commit previamente. Sin embargo, muchas de esas modificaciones aun no estan terminadas y no vale la pena commitearlas. PERO NECESITAMOS CAMBIAR DE RAMA O TRABAJAR EN OTRA COSA.
+El stash es un espacio en memoria de GIT para guardar esos cambios, es decir, esos cambios los guarda en memoria y podemos cambiar de rama sin problema alguno.
+Podemos hacer cosas experimentales en esa otra rama y guardar esos cambios nuevamente en el stash. En pocas palabras, el stash son como commits en memoria que no se exponen directamente en la historia del proyecto, pero que podemos consultar y recuperar para seguir trabajando en ellos y generar un commit real, o descartarlos de forma definitiva.
+
+git stash                               (Guardar las modifiaciones en el stash)
+git stash store -m "mensaje"            (Guardar en el stash las modificaciones con un nombre de commit virtual)
+git stsh list                           (Listar todos los cambios "experimentos" guardados en el stash)
+git stash pop                           (Sacar esos cambios del stash a mi espacio de trabajo)
+                                        Se recomienda sacarlos en la rama donde se comenzaron a generar
+
+git stash branch nombreNuevaRama        Generar una nueva rama con los cambios almacenados en el stash
+git stash drop                          Eliminar los cambios almacenados en el stash
+
+ES IMPORTANTE MENCIONAR QUE PODEMOS RECUPERAR, ELIMINAR O SACAR A UNA NUEVA RAMA UN cambio en particular almacenado en el stash, puesto que estos se identifican por hashes. ES DECIR PODEMOS HACER MARAVILLAS CON ELLOS.
+
+GENERALMENTE SE LES USA FRECUENTEMENTE EN EQUIPOS CUYAS PETICIONES SON LATENTES, AVANZAS EN ALGO EXPERIMENTAL QUE NO TE GUSTARIA DEJAR CAER EN UNA RAMA, SON PRUEBAS QUE SI FUNCIONAN LAS DEJAS CAER SOBRE UNA RAMA Y FUSIONES CON TU RAMA PRINCIPAL, Y LUEGO AL MASTER.
+pero al ser moficaciones, es probable que se tope uno con problemas al atender aspectos en otras ramas, y es imposible moverse si esas modificaciones no son confirmadas, para eso esta el stash.
