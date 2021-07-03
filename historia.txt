@@ -319,3 +319,16 @@ git clean -fd           (Elimina archivos y directorios que no han sido trackead
 git clean -fdX          Buenismo para eliminar archivos ignorados (node_modules, .mp3, etc)
                         HAY QUE TENER CUIDADO CON LOS ARCHIVOS BINARIOS, YA QUE LAS IMAGENES O VIDEOS
                         QUE IGNOREMOS SE ELIMINARÁN, DEBEMOS TENER UN RESPALDO DE LOS MISMOS EN UN CDN ya que este comando es como un Build para dejar la versión definitiva de nuestro repositiorio 
+
+
+
+
+26. Cherry Pick
+
+No es una buena práctica, pero es de utilidad cuando necesitamos traernos ciertos commits en una determinada rama.
+El caso más práctico es cuando confirmamos cambios en una rama equivocada, es decir, nos damos cuenta que esos commits deberían estar en otra rama, para ello, con cherry-pick indicamos uno por uno los commits que deseamos copiar, y nos pasamos a la rama donde deseamos deajarlos caer.
+
+git cherry-pick hashCommit
+
+En lo personal prefiero las fusiones, sin embargo cherry-pick nos viene al dedo cuando esa rama aun no esta lista para pasar a stagging, pero tenemos adelantos que ya deberían si o si estar en producción.
+Es como seleccionar commits 
