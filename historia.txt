@@ -242,3 +242,15 @@ El ! indica una excepción (se ignora todo el directorio documentos, pero se per
 NOTA: EN GIT NO SE RECOMIENDA AGREGAR ARCHIVOS BINARIOS (IMAGENES), SOLO ARCHIVOS DE TEXTO.
 Para el tema de imagenes podemos publicarlas directamente sobre un FTP, CDN, o servicios como imgurl.com, donde se publican imagenes y solo se hace referencia a ellas por su URL.
 
+
+20. README.md
+
+Es un archivo para la descripción detallada del proyecto y sus formas de instalación, aspi como el listado de dependencias y colaboradores.
+
+
+
+21. Renombrar archivos.
+
+Es común en el transcurso del proyecto, decidor renombrar el nombre de algunos archivos. Esto se hace a través del la linea de comandos de GIT cuando el archivo ya se encuentra agregado al repositorio
+
+git mv old_filename new_filename
