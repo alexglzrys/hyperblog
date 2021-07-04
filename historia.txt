@@ -332,3 +332,17 @@ git cherry-pick hashCommit
 
 En lo personal prefiero las fusiones, sin embargo cherry-pick nos viene al dedo cuando esa rama aun no esta lista para pasar a stagging, pero tenemos adelantos que ya deberían si o si estar en producción.
 Es como seleccionar commits 
+
+
+
+
+27. Buscar en archivos y commits
+
+En ocasiones necesitamos saber en que linea de código hemos colocado cierta palabra u oración.
+git grep -n "mi oración a buscar"
+
+O necesitamos saber cuantas veces aparece esa palabra en todos los archivos
+git grep -c "mi palabra"
+
+O verificar que commits tienen involucrada esa palabra u oración (ya sea en su leyenda, nombre de rama, tag o contenido interno de algun archivo)
+git log -S "mi palabra o tag"
